@@ -12,6 +12,10 @@ describe('isbn module', function() {
         expect(ISBN.parse('9788184890261')).to.be.null;
       });
 
+      it('parses 9789996421303', function() {
+        expect(ISBN.parse('9789996421303').asIsbn13(true)).to.eq('978-99964-21-30-3');
+      });
+
       describe('given an ISBN10', function() {
         var isbn;
 
